@@ -1,24 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Login extends CI_Controller {
-
-  
-    // public function index() 
-    // {   $cntData['urlPage']=base_url().'jurnal/index.php/login.php';
-    //     $this->load->model('MainModel');
-    //     $this->load->view('login'); 
-    //     if($this->input->post('btnEnter')){
-    //       $dd[0]=$this->input->post('login');
-    //       $dd[1]=$this->input->post('password');
-    //       $this->MainModel->EnterFromLogin($dd);
-      
-    //     }
-    //     else {
-    //       echo "swdfgh";
-    //     }
-    // } первый способ
-    
+class Login extends CI_Controller { 
     public function index()
   {
      $b='welcome'; 
@@ -33,15 +16,6 @@ class Login extends CI_Controller {
     
           $this->MainModel->EnterFromLogin($dd);
   
-        //       if ($result) {
-        //           echo "Вход успешен!";
-        //           redirect('/view/asosi2');
-        //       } else {
-        //           echo "Неверный логин или пароль.";
-        //       }
-        //   } else {
-        //       echo "Поля логина и пароля не должны быть пустыми.";
-        //   }
         }
       }
   

@@ -36,21 +36,6 @@ class MainModel extends CI_Model {
              $this->db->where('date.id', $dd);
              return $this->db->get()->result_array();
          }
-
-        //  public function EnterFromLogin($dd) {
-        //     $this->db->from('teacher');
-        //     $this->db->select('teacher.teacher_id, teacher.login,teacher.password');
-                
-        //     if ($dd['login'] == 'teacher.login' && $dd['password'] == 'teacher.password') {
-        //         header('Location: http://localhost/jurnal/');
-        //         exit();
-        //     } else {
-        //         echo "Неверный логин или пароль.";
-        //     }
-
-        //    return $this->db->get()->result_array();
-        //    }  первый способ
-
          
          public function EnterFromLogin($data) {
             // Убедимся, что входные данные не пустые

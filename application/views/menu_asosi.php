@@ -11,7 +11,6 @@
                     <div class="navbar-nav ms-auto py-0">
                         <a href="" class="nav-item nav-link active">Асосӣ</a>
                         <a href="http://localhost/jurnal/index.php/Login" class="nav-item nav-link">Дохилшавӣ</a>
-                        <a href="suroga.php" class="nav-item nav-link">Суроға</a>
                     </div>
                     <div class="d-none d-xl-flex me-3">
                         <div class="d-flex flex-column pe-3 border-end border-primary">
