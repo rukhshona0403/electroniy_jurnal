@@ -9,11 +9,17 @@ class MainModel extends CI_Model {
         return $this->db->get()->result_array();
     }
         public function getAllFromSinf() {
-         $this->db->from('classes');
+        $this->db->from('classes');
         return $this->db->get()->result_array();
         }  
         public function getAllFromSana() {
-         $this->db->from('date');
+            $this->db->from('date');
+            return $this->db->get()->result_array();
+            }  
+        public function getAllFromDate($dd) {
+        $this->db->from('date');
+        $this->db->select('id_class,id_subject');
+        $this->db->where('id_subject',$dd['id_subject'],'id_class',$dd['id_class']);
         return $this->db->get()->result_array();
         } 
 

@@ -11,7 +11,7 @@ class Login extends CI_Controller {
       if ($this->input->post('btnEnter')) {
           $dd['login'] = $this->input->post('login');
           $dd['password'] = $this->input->post('password');
-  
+          
         if (!empty($dd['login']) && !empty($dd['password'])) {
     
           $this->MainModel->EnterFromLogin($dd);

@@ -50,13 +50,11 @@
                   <form method="POST">
                   
                   <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                        <input type="text" name="selSana" class="form-control datetimepicker-input" data-target="#reservationdate">
-                        <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
-                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                        </div>
-                      </div>
-                  </div>
-              
+        <input type="text" name="selSana" class="form-control datetimepicker-input" data-target="#reservationdate">
+        <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+        </div>
+    </div>
                   <div class="form-group">
                         <label>Фанро интихоб кунед:</label>
                       
@@ -100,25 +98,26 @@
     <thead>
         <tr>
             <th>№</th>
-            <th>Сана</th>
-            <th>Қайди мавзӯъ</th>
-            <th>Қайди вазифаи хонагӣ</th>
+            <th> Ному насаб</th>
+            <?php if(isset($cdata)) {
+                              for($i=0;$i<count($cdata);++$i){ ?>
+            
+            <th><?=$i['date'];?></th>
+            <?php } }
+            else {
+                echo 'asdfghj';
+            
+                           }
+             ?>
         </tr>
     </thead>
     <tbody>
-    <?php if(isset($btnAddPressed)){
-                           if(isset($nomNasabProblem)) {
-                              for($i=0;$i<count($nomNasabProblem);++$i){ ?>
         <tr>
             <td><?=$i+1 ?></td>
             <td><?=$nomNasabProblem[$i]['id_student'] ?></td>
             <td><?=$fanProblem[0]['id_fan']?></td>
-            <td>Ҳал кардани масалаҳо доир ба мавзӯъ.</td>
         </tr>
-        <?php 
-                              }
-                           }
-                        } ?>
+     
     </tbody>
 </table>
 

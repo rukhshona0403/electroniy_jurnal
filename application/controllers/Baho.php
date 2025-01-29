@@ -13,7 +13,14 @@ class Baho extends CI_Controller {
 		$cntData['sanaProblem']=$this->MainModel->getAllFromSana();
 		
 		if($this->input->post('btnAdd')) {
-			$dd['class'] = $this->input->post('selSinf');
+			//$dd['id_teacher'] = $this->input->post('login');
+			$dd['id_subject'] = $this->input->post('selFan');			
+			$dd['id_class'] = $this->input->post('selSinf');
+			$this->MainModel->getAllFromDate($dd);
+			$cdata['dataProblem']=$this->MainModel->getAllFromDate($dd);
+			$this->load->view('baho',$cdata);
+	
+			/*$dd['class'] = $this->input->post('selSinf');
 			$dd['subject_name'] = $this->input->post('selFan');
 		    $dd['date'] = $this->input->post('selSana');
 			print_r($dd['id_subject']);
@@ -21,12 +28,13 @@ class Baho extends CI_Controller {
 			$cntData['fanProblem']=$this->MainModel->getAllFanFromSinf($dd['id_fan'][0]);
 			$cntData['sanaProblem']=$this->MainModel->getAllSanaFromSinf($dd['id_fan'][0]);
 			$cntData['btnAddPressed']=123;
-			$cntData['bahoProblem']=$this->MainModel->getAllFromBaho();
+			$cntData['bahoProblem']=$this->MainModel->getAllFromBaho();*/
 		
-		}		
+		}	
+				
 		$this->load->view('header');
 		$this->load->view('menu');
-		$this->load->view('baho',$cntData);
+		$this->load->view('baho',$cntData,$cdata);
 		$this->load->view('footer');
 
 		
