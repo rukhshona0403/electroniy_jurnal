@@ -17,10 +17,10 @@ class MainModel extends CI_Model {
             return $this->db->get()->result_array();
             }  
         public function getAllFromDate($dd) {
-        $this->db->from('date');
-        $this->db->select('id_class,id_subject');
-        $this->db->where('id_subject',$dd['id_subject'],'id_class',$dd['id_class']);
-        return $this->db->get()->result_array();
+            $this->db->select('student.NameFirstname');
+            $this->db->from('student');
+            $this->db->where('id_class',$dd[1]);
+            return $this->db->get()->result_array();
         } 
 
         public function getAllFanFromSinf($dd) {

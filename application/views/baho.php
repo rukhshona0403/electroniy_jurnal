@@ -43,12 +43,12 @@
     </style>
 </head>
 <body>
-
+<form method="POST">
+                  
 <div class="col-sm-6">
           <div class="form-group">
                   <label>Санаро дохил кунед:</label>
-                  <form method="POST">
-                  
+                
                   <div class="input-group date" id="reservationdate" data-target-input="nearest">
         <input type="text" name="selSana" class="form-control datetimepicker-input" data-target="#reservationdate">
         <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
@@ -58,7 +58,7 @@
                   <div class="form-group">
                         <label>Фанро интихоб кунед:</label>
                       
-                          <select name="selFan"class="form-control"> 
+                          <select class="form-control" name="selFan"> 
                             <option value="0" disabled selected>Фанни...</option>
                               <?php if(isset($dtProblem)) {
                                 foreach($dtProblem as $v) { ?>
@@ -73,7 +73,7 @@
                         <div class="form-group">
                         <label>Синфро интихоб кунед:</label>
                         
-                          <select name="selSinf"class="form-control"> 
+                          <select class="form-control" name="selSinf"> 
                             <option value="0" disabled selected>Синфи...</option>
                               <?php if(isset($sinfProblem)) {
                                 foreach($sinfProblem as $v) { ?>
@@ -83,8 +83,8 @@
                                 ?>  
                             </select>
                             <br></br>
-                            <button type="submit" class="btn btn-block btn-dark" name='btnAdd' value="btnAdd"><b>Интихобкунӣ</b></button>
-                            </form> 
+                            <button  name="btnSelect" type="submit" value="btnSelect" class="btn btn-block btn-dark" ><b>Интихобкунӣ</b></button>
+                          
      
                           </div>
                         </div>
@@ -92,32 +92,34 @@
                   </div>
                 </div><!-- /.container-fluid -->
               </section>
-
+              </form> 
+              
 <table>
-    <caption>Варақаи баҳо</caption>
+    
     <thead>
         <tr>
             <th>№</th>
             <th> Ному насаб</th>
-            <?php if(isset($cdata)) {
+            <?php if(isset($btnSelectPressed))
+            if(isset($cdata)) {
                               for($i=0;$i<count($cdata);++$i){ ?>
             
             <th><?=$i['date'];?></th>
-            <?php } }
-            else {
-                echo 'asdfghj';
-            
-                           }
-             ?>
+           
         </tr>
     </thead>
     <tbody>
         <tr>
             <td><?=$i+1 ?></td>
-            <td><?=$nomNasabProblem[$i]['id_student'] ?></td>
+            <td><?=$dataProblem[$i]['id_student'] ?></td>
             <td><?=$fanProblem[0]['id_fan']?></td>
         </tr>
-     
+        <?php } }
+            else {
+                echo 'asdfghj';
+            
+                           } 
+             ?>
     </tbody>
 </table>
 
